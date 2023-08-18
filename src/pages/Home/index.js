@@ -1,18 +1,27 @@
 import { Link } from 'react-router-dom';
+import Header from '../../components/header'
 import '../../css/style.css'
 
 function Home(){
     return (
-        <div className='row'>
-            <div className='navbar-nav navbar-right mt-2 mb-2 ml-5'>
-                <h1>Home</h1>
-                <nav >
-                    <Link to="/">
-                        <h2>Acessar Home</h2>
-                    </Link>
-                    <Link to="/usuarios">
-                        <h2>Acessar Usuários</h2>
-                    </Link>
+        <div className='container-fluid'>
+            <Header/>
+            <div className='row'>
+                <nav className='col-md-2 d-none d-md-block bg-dark sidebar'>
+                    <div className='sidebar-sticky mt-3' >
+                        <ul className='nav flex-column'>
+                            <li className='nav-item'>
+                                <Link className='nav-link text-light' to="/">
+                                    <p>Acessar Home</p>
+                                </Link>
+                            </li>
+                            <li className='nav-item'>    
+                                <Link className='nav-link text-light' to="/usuarios">
+                                    <p>Acessar Usuários</p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </div>

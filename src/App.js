@@ -6,7 +6,6 @@ import Usuarios from './pages/Usuarios'
 function App() {
   return (
     <div className="App">
-      <br/>
       <Router>
         {/*<Layout>*/}
           <Routes>
