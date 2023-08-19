@@ -3,8 +3,10 @@ import Nav from '../components/Nav';
 import api from '../services/api'
 
 function Usuarios() {
-    function getUsers(){
+    async function getUsers(){
+        const users = await api.get('sdcscds');
         
+        console.log("cdscscds");
     }
 
     return (

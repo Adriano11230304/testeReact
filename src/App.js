@@ -1,19 +1,10 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home';
-import Usuarios from './pages/Usuarios'
+import Routers from './routes/Route'
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        {/*<Layout>*/}
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/usuarios" element={<Usuarios />} />
-          </Routes>
-      {/*</Layout>*/}
-      </Router>
+      <Routers/>
     </div>
   );
 }
