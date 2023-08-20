@@ -25,15 +25,17 @@
     font-size: 12px;
     background-color: #007fff;
     color: #fff;
-    display: none;
+    display: block;
 
 }
 
-#loading1 {
+#loading1 { 
     display: inline-block;
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+
+    &:after {
         content: " ";
         display: block;
         width: 55px;
@@ -43,18 +45,18 @@
         border: 6px solid #faa61a;
         border-color: #faa61a transparent #faa61a transparent;
         animation: lds-dual-ring 1.2s linear infinite;
-    
-        @keyframes lds-dual-ring {
-            0% {
-                transform: rotate(0deg);
-            }
-    
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-}
+    }
 
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
 
 .flex-container {
     display: flex;

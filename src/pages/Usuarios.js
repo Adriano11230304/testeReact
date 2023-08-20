@@ -32,12 +32,10 @@ function Usuarios() {
                     <div className='container my-4'>
                         <h4>Users</h4>
                     </div>
-                    <div className='loading'>dscsdcsc</div>
+                    
                     <div className="container-fluid">
                         <div className="m-3">
-                            
                             {loading ? <Loader /> :
-                                <>
                             <table className="table table-borderless table-hover mt-3">
                                 <thead className="thead-dark text-md-center">
                                     <th>Nome</th>
@@ -58,8 +56,7 @@ function Usuarios() {
                                     }
                                 </tbody>
                             </table>
-                                </>
-                            }
+                        }
                         </div>
                     </div>
                     
