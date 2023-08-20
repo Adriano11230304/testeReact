@@ -8,7 +8,10 @@ function Home(){
             <Header/>
             <div className='row'>
                 <Nav />
-                <h1>Home</h1>
+                <div className="col-md-10">
+                    <h1>Home</h1>
+                </div>
+                
             </div>
         </div>
     )
