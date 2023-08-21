@@ -1,8 +1,9 @@
-import Header from '../components/header';
+import Header from '../components/Header';
 import Nav from '../components/Nav';
 import api from '../services/api';
 import { useState, useLayoutEffect } from 'react';
 import Loader from '../components/Loader';
+
 
 function Usuarios() {
     const [peoples, setPeoples] = useState([]);

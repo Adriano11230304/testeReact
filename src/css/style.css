@@ -1,60 +1,17 @@
 #loader{
-    position: absolute;
-    width: auto;
-    padding: 6px;
+    animation: is-rotating 1s infinite;
+    border-radius: 50%;
+    border: 6px solid #e5e5e5;
+    border-top-color: #51d4db;
+    height: 50px;
+    width: 50px;
     margin-left: 500px;
-    margin-top: 10px;
-    text-align: center;
-    border-width: 2px;
-    border: 1px solid #003eff;
-    font-size: 12px;
-    background-color: #007fff;
-    color: #fff;
-    display: none;    
-}
-
-#loading {
-    position: absolute;
-    width: auto;
-    padding: 6px;
-    margin-left: 450px;
     margin-top: 40px;
-    text-align: center;
-    border-width: 2px;
-    border: 1px solid #003eff;
-    font-size: 12px;
-    background-color: #007fff;
-    color: #fff;
-    display: block;
-
 }
 
-#loading1 { 
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-
-    &:after {
-        content: " ";
-        display: block;
-        width: 55px;
-        height: 55px;
-        margin: 8px;
-        border-radius: 50%;
-        border: 6px solid #faa61a;
-        border-color: #faa61a transparent #faa61a transparent;
-        animation: lds-dual-ring 1.2s linear infinite;
-    }
-
-    @keyframes lds-dual-ring {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
     }
 }
 

@@ -1,4 +1,4 @@
-import Header from '../components/header'
+import Header from '../components/Header'
 import '../css/style.css'
 import Nav from '../components/Nav'
 
