@@ -21,9 +21,11 @@ export default function Login(){
         } else if (target.name === 'password'){
             setPassword(value);
         }
-        
-        console.log("email", email);
-        console.log("password", password);
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        console.log(email, password);
     }
 
     return (
@@ -41,7 +43,7 @@ export default function Login(){
                             <label>Password</label>
                             <input type="password" id="password" className="form-control" name="password" required placeholder="Escreva sua senha" onChange={handleInputNameChange} />
                         </div>
-                        <button className="btn btn-outline-dark" type="submit">Entrar</button>
+                        <button className="btn btn-outline-dark" type="submit" onClick={handleSubmit}>Entrar</button>
 
                     </form>
                 </div>
