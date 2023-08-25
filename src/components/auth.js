@@ -4,7 +4,7 @@ import apiNova from "../services/apiNova"
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-    const [ user, SetUser ] = useState();
+    const [ user, setUser ] = useState();
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -13,16 +13,23 @@ export const AuthProvider = ({ children }) => {
 
 
     const signin = async (email, password) => {
+        const options = {
+            headers: { 'content-type': 'application/json' },
+        };
         const res = await apiNova.post('/users/userAuth', {
             "email": email,
             "password": password
-        })
-
-        console.log(res);
+        }, options);
+        setUser(res.data);
+        
 
         return "Autenticação!";
     };
 
 
-    return <AuthContext.Provider>{ children }</AuthContext.Provider>;
+    return <AuthContext.Provider
+        value={{ user, signed: !!user, signin }}
+    >
+        { children }
+        </AuthContext.Provider>;
 }
