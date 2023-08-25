@@ -1,18 +1,18 @@
-import { createContext, useEffect, useState } from "react";
 import apiNova from "../services/apiNova"
 
-export const AuthContext = createContext({});
 
-export const AuthProvider = ({ children }) => {
-    const [ user, setUser ] = useState();
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        console.log(token);
-    }, [])
+    const isAuthenticated = () => {
+        const token = localStorage.getItem("authenticated");
+        if(token){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
     const signin = async (email, password) => {
+        
         const options = {
             headers: { 'content-type': 'application/json' },
         };
@@ -20,16 +20,30 @@ export const AuthProvider = ({ children }) => {
             "email": email,
             "password": password
         }, options);
-        setUser(res.data);
+        let token = null;
+        if(res && res.data.token){
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("user", res.data.user);
+            token = localStorage.getItem("token");
+        }
         
 
-        return "Autenticação!";
+        if(token){
+            return {
+                "token": token,
+                "user": res.data.user,
+                "authenticated": true
+            };
+        }else{
+            return {
+                "authenticated": false
+            };
+        }
     };
 
-
-    return <AuthContext.Provider
-        value={{ user, signed: !!user, signin }}
-    >
-        { children }
-        </AuthContext.Provider>;
-}
+    const logout = () => {
+        localStorage.setItem("token", null);
+        return "Logout realizado!";
+    }
+    
+    export { signin, isAuthenticated, logout };

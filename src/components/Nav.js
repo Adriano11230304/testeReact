@@ -7,7 +7,7 @@ export default function Nav () {
                 <div className='sidebar-sticky mt-3' >
                     <ul className='nav flex-column'>
                         <li className='nav-item'>
-                            <Link className='nav-link text-light' to="/">
+                            <Link className='nav-link text-light' to="/home">
                                 <p>Acessar Home</p>
                             </Link>
                         </li>

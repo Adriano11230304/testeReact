@@ -18,7 +18,10 @@ class UserController{
                 data: user.id
             }, 'adriano', { expiresIn: '360d' });
 
-            res.json(token);
+            res.json({
+                "token": token,
+                "user": user
+            });
         }else{
             res.json("Usuário não cadastrado no sistema, verifique suas credenciais!")
         }

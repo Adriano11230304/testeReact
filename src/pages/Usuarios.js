@@ -39,10 +39,12 @@ function Usuarios() {
                             {loading ? <Loader /> :
                             <table className="table table-borderless table-hover mt-3">
                                 <thead className="thead-dark text-md-center">
+                                    <tr>
                                     <th>Nome</th>
                                     <th>Altura</th>
                                     <th>Peso</th>
                                     <th>Cor dos olhos</th>
+                                    </tr>
                                 </thead>
                                 <tbody className="text-md-center">
                                     { peoples.map( people => (
